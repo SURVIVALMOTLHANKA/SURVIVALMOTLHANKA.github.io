@@ -1,55 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Survival Warona Motlhanka | Professional Portfolio</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background-color: #f4f1ea; }
-        header { background-color: #2c3e50; color: #ecf0f1; padding: 40px 20px; text-align: center; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        .profile-img { width: 200px; height: 200px; border-radius: 50%; border: 5px solid #d35400; margin-bottom: 20px; object-fit: cover; }
-        .contact-info { margin-top: 15px; }
-        .contact-info a { color: #ecf0f1; margin: 0 10px; text-decoration: underline; font-weight: bold; }
-        .subject-section { margin-bottom: 20px; background: #ffffff; padding: 20px; border-left: 8px solid #d35400; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h2 { color: #d35400; margin-top: 0; font-size: 1.2em; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survival Warona Motlhanka | Geology Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f1ea;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #d35400;
+      background-color: #d35400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 auto 16px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #ecf0f1;
+    }
+
+    header .subtitle {
+      font-size: 14px;
+      opacity: 0.75;
+      margin-bottom: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-row a {
+      color: #ecf0f1;
+      font-size: 13px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+    }
+
+    .contact-row a:hover {
+      text-decoration: underline;
+      opacity: 1;
+    }
+
+    /* BODY */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #d35400;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 28px 0 10px;
+    }
+
+    /* PROFILE */
+    .profile-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* SOFTWARE PILLS */
+    .software-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      background: #2c3e50;
+      color: #ecf0f1;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* EXPERIENCE */
+    .exp-card {
+      background: #fff;
+      border-left: 4px solid #2c3e50;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+    }
+
+    .exp-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 2px;
+    }
+
+    .exp-meta {
+      font-size: 12px;
+      color: #d35400;
+      margin-bottom: 6px;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* MODULE CARDS */
+    .module-card {
+      background: #fff;
+      border-left: 4px solid #d35400;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      display: grid;
+      grid-template-columns: 1fr 82px;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .module-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .module-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .module-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    .module-code {
+      font-size: 11px;
+      font-weight: 600;
+      color: #aaa;
+      text-align: right;
+      padding-top: 2px;
+      white-space: nowrap;
+    }
+
+    /* LICENCE */
+    .licence-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    .licence-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .licence-value {
+      font-size: 13px;
+      color: #333;
+    }
+
+    /* REFERENCES */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .ref-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    .ref-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 2px;
+    }
+
+    .ref-role {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .ref-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .ref-contact a {
+      font-size: 12px;
+      color: #d35400;
+      text-decoration: none;
+    }
+
+    .ref-contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 560px) {
+      .ref-grid { grid-template-columns: 1fr; }
+      .module-card { grid-template-columns: 1fr; }
+      .module-code { text-align: left; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="Survival The Geologist_2.jpg" alt="Survival Warona Motlhanka" class="profile-img">
-        <h1>Survival Warona Motlhanka</h1>
-        <p>BSc Geology Graduate (BIUST)</p>
-        <div class="contact-info">
-            <a href="tel:+26773195401">Phone</a> | 
-            <a href="mailto:survivalmotlhanka44@gmail.com">Email</a> | 
-            <a href="https://www.linkedin.com/in/survival-motlhanka-6a9788225" target="_blank">LinkedIn</a>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="subject-section"><h2>Earth & Its Materials (GEOL 201)</h2></div>
-        <div class="subject-section"><h2>Earth Surface Processes (GEOL 204)</h2></div>
-        <div class="subject-section"><h2>Introduction to Structural Geology & Field Methods (GEOL 207)</h2></div>
-        <div class="subject-section"><h2>Mineralogy & Mineral Microscopy (GEOL 208)</h2></div>
-        <div class="subject-section"><h2>Igneous & Metamorphic Petrology (GEOL 301)</h2></div>
-        <div class="subject-section"><h2>Sedimentology & Stratigraphy (GEOL 302)</h2></div>
-        <div class="subject-section"><h2>Geochemistry & Exploration (GEOL 303)</h2></div>
-        <div class="subject-section"><h2>Geophysics & Exploration (GEOL 304)</h2></div>
-        <div class="subject-section"><h2>Structural Geology & Tectonics (GEOL 305)</h2></div>
-        <div class="subject-section"><h2>Research Methods in Earth & Environmental Sciences (GEOL 306)</h2></div>
-        <div class="subject-section"><h2>Hydrogeology & Water Resources (GEOL 307)</h2></div>
-        <div class="subject-section"><h2>Geological Field Mapping & Reporting (GEOL 310)</h2></div>
-        <div class="subject-section"><h2>Geology of Southern Africa & Botswana (GEOL 401)</h2></div>
-        <div class="subject-section"><h2>Petroleum Geology (GEOL 402)</h2></div>
-        <div class="subject-section"><h2>Geology of Ore Deposits (GEOL 403)</h2></div>
-        <div class="subject-section"><h2>Exploration & Evaluation of Mineral Deposits (GEOL 404)</h2></div>
-        <div class="subject-section"><h2>Environmental Geology & Waste Management (GEOL 405)</h2></div>
-        <div class="subject-section"><h2>Engineering Geology (GEOL 406)</h2></div>
-        <div class="subject-section"><h2>Final Year Project (GEOL 408)</h2></div>
-        <div class="subject-section"><h2>Remote Sensing in Earth & Environmental Sciences (ENVS 302)</h2></div>
-        <div class="subject-section"><h2>Geographic Information Systems & Databases (ENVS 305)</h2></div>
-        <div class="subject-section"><h2>Environmental Pollution and Remediation (ENVS 401)</h2></div>
-        <div class="subject-section"><h2>Introduction to Quaternary Environments & Palaepedology (ENVS 402)</h2></div>
+  <header>
+    <div class="avatar">SW</div>
+    <h1>Survival Warona Motlhanka</h1>
+    <p class="subtitle">BSc Geology Graduate &middot; BIUST &middot; Majwaneng, Botswana</p>
+    <div class="contact-row">
+      <a href="tel:+26773195401">&#128222; +267 73 195 401</a>
+      <a href="tel:+26776657985">&#128241; +267 76 657 985</a>
+      <a href="mailto:survivalmotlhanka44@gmail.com">&#9993; survivalmotlhanka44@gmail.com</a>
+      <a href="https://www.linkedin.com/in/survival-motlhanka-6a9788225" target="_blank">&#128101; LinkedIn</a>
     </div>
+  </header>
+
+  <div class="container">
+
+    <!-- PROFILE -->
+    <div class="section-label">Profile</div>
+    <div class="profile-card">
+      Highly motivated BSc Geology graduate from BIUST with a strong technical foundation spanning mineral exploration, hydrogeology, and geotechnical engineering. Proven hands-on experience in geological field mapping, core logging, geochemical soil sampling, and geophysical data interpretation. Holds a clean Class B driver's licence and is ready to deliver immediate value in field-based, data-driven, or consultancy roles across Botswana's geological, water, and engineering sectors.
+    </div>
+
+    <!-- SOFTWARE -->
+    <div class="section-label">Software</div>
+    <div class="software-row">
+      <span class="pill">Oasis Montaj</span>
+      <span class="pill">Leapfrog</span>
+      <span class="pill">ArcGIS</span>
+      <span class="pill">RecMin</span>
+      <span class="pill">AutoCAD</span>
+      <span class="pill">R</span>
+      <span class="pill">MS Office Suite</span>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section-label">Experience</div>
+    <div class="exp-card">
+      <div class="exp-title">Engineering Geology Intern</div>
+      <div class="exp-meta">Rams Civils &middot; 4 Months</div>
+      <div class="exp-desc">Applied geological principles to civil engineering site assessments under professional supervision. Executed field inspections, conducted systematic soil sampling, and compiled detailed geotechnical reports for infrastructure design. Managed on-site safety protocols and coordinated data collection with civil engineering project teams.</div>
+    </div>
+
+    <!-- FIELD & ROCK SCIENCE -->
+    <div class="section-label">Field &amp; Rock Science</div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Assessment of Groundwater Potential in Fractured Crystalline Basement Rocks, Eastern Botswana</span>
+        <span class="module-desc">Conducted an integrated geological and geophysical study to identify high-yield structural water targets in fractured basement terrain. Interpreted regional aeromagnetic data using Oasis Montaj to delineate subsurface fracture networks, and compiled a comprehensive technical report demonstrating professional data integration and exploration target generation.</span>
+      </div>
+      <span class="module-code">(GEOL 408)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geological Field Mapping &amp; Reporting</span>
+        <span class="module-desc">Conducted systematic traverse mapping across varied lithological units in Kanye, measured strike and dip orientations, and produced professional-grade geological maps documenting lithology, structure, and stratigraphy.</span>
+      </div>
+      <span class="module-code">(GEOL 310)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Earth &amp; Its Materials</span>
+        <span class="module-desc">Studied the composition and classification of rocks and minerals, building a foundation for identifying geological materials in the field and laboratory.</span>
+      </div>
+      <span class="module-code">(GEOL 201)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Earth Surface Processes</span>
+        <span class="module-desc">Examined weathering, erosion, and sediment transport processes that shape landscapes, linking surface dynamics to the broader geological record.</span>
+      </div>
+      <span class="module-code">(GEOL 204)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Introduction to Structural Geology &amp; Field Methods</span>
+        <span class="module-desc">Learned to read and interpret rock deformation structures such as folds and faults, and applied field mapping techniques to document geological features in outcrop.</span>
+      </div>
+      <span class="module-code">(GEOL 207)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Mineralogy &amp; Mineral Microscopy</span>
+        <span class="module-desc">Identified and characterised minerals using optical microscopy and thin-section analysis, developing skills central to petrographic interpretation.</span>
+      </div>
+      <span class="module-code">(GEOL 208)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Igneous &amp; Metamorphic Petrology</span>
+        <span class="module-desc">Analysed the origin, classification, and textures of igneous and metamorphic rocks, interpreting their formation environments through petrographic and geochemical evidence.</span>
+      </div>
+      <span class="module-code">(GEOL 301)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Sedimentology &amp; Stratigraphy</span>
+        <span class="module-desc">Investigated sedimentary environments, depositional processes, and stratigraphic principles used to reconstruct past geological histories and correlate rock sequences.</span>
+      </div>
+      <span class="module-code">(GEOL 302)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Structural Geology &amp; Tectonics</span>
+        <span class="module-desc">Explored tectonic plate interactions and the resulting structural deformation of the crust, interpreting stress regimes and their influence on rock fabrics.</span>
+      </div>
+      <span class="module-code">(GEOL 305)</span>
+    </div>
+
+    <!-- RESOURCES & EXPLORATION -->
+    <div class="section-label">Resources &amp; Exploration</div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geochemistry &amp; Exploration</span>
+        <span class="module-desc">Applied geochemical sampling and analytical methods to detect anomalies indicative of mineral deposits, supporting surface and subsurface exploration programmes.</span>
+      </div>
+      <span class="module-code">(GEOL 303)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geophysics &amp; Exploration</span>
+        <span class="module-desc">Used geophysical surveying techniques including gravity, magnetic, and seismic methods to image subsurface geology and identify prospective targets.</span>
+      </div>
+      <span class="module-code">(GEOL 304)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Hydrogeology &amp; Water Resources</span>
+        <span class="module-desc">Studied groundwater flow systems, aquifer characterisation, and water resource assessment methods relevant to arid and semi-arid environments like Botswana.</span>
+      </div>
+      <span class="module-code">(GEOL 307)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geology of Southern Africa &amp; Botswana</span>
+        <span class="module-desc">Examined the regional geological framework of Southern Africa, including the Kaapvaal Craton and Karoo Supergroup, with emphasis on Botswana's geological heritage.</span>
+      </div>
+      <span class="module-code">(GEOL 401)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Petroleum Geology</span>
+        <span class="module-desc">Studied the generation, migration, and trapping of hydrocarbons, evaluating source rocks, reservoir properties, and basin analysis for petroleum prospectivity.</span>
+      </div>
+      <span class="module-code">(GEOL 402)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geology of Ore Deposits</span>
+        <span class="module-desc">Examined the genesis and classification of ore deposit types including magmatic, hydrothermal, and sedimentary-hosted systems relevant to the mining industry.</span>
+      </div>
+      <span class="module-code">(GEOL 403)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Exploration &amp; Evaluation of Mineral Deposits</span>
+        <span class="module-desc">Applied resource estimation, drill-hole data interpretation, and deposit evaluation techniques used in the assessment of economic mineral occurrences.</span>
+      </div>
+      <span class="module-code">(GEOL 404)</span>
+    </div>
+
+    <!-- ENVIRONMENT & APPLIED SCIENCE -->
+    <div class="section-label">Environment &amp; Applied Science</div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Research Methods in Earth &amp; Environmental Sciences</span>
+        <span class="module-desc">Developed skills in scientific research design, data collection, statistical analysis, and technical writing as applied to earth and environmental science investigations.</span>
+      </div>
+      <span class="module-code">(GEOL 306)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Environmental Geology &amp; Waste Management</span>
+        <span class="module-desc">Assessed the interaction between geological processes and environmental systems, including land degradation, contamination risk, and sustainable waste disposal practices.</span>
+      </div>
+      <span class="module-code">(GEOL 405)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Engineering Geology</span>
+        <span class="module-desc">Applied geological principles to civil and geotechnical engineering problems, evaluating site conditions, rock mass stability, and foundation suitability.</span>
+      </div>
+      <span class="module-code">(GEOL 406)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Remote Sensing in Earth &amp; Environmental Sciences</span>
+        <span class="module-desc">Used satellite imagery and remote sensing platforms to analyse land cover, geological structures, and environmental change across large spatial scales.</span>
+      </div>
+      <span class="module-code">(ENVS 302)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Geographic Information Systems &amp; Databases</span>
+        <span class="module-desc">Built and queried spatial databases using GIS software to map geological and environmental data, supporting spatial analysis and decision-making.</span>
+      </div>
+      <span class="module-code">(ENVS 305)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Environmental Pollution and Remediation</span>
+        <span class="module-desc">Studied sources, pathways, and impacts of environmental contaminants, and evaluated remediation strategies for polluted soils, water, and air.</span>
+      </div>
+      <span class="module-code">(ENVS 401)</span>
+    </div>
+
+    <div class="module-card">
+      <div class="module-left">
+        <span class="module-name">Introduction to Quaternary Environments &amp; Palaepedology</span>
+        <span class="module-desc">Investigated Quaternary climate change, landscape evolution, and fossil soil formation to reconstruct past environmental conditions in Southern Africa.</span>
+      </div>
+      <span class="module-code">(ENVS 402)</span>
+    </div>
+
+    <!-- LICENCES -->
+    <div class="section-label">Licences</div>
+    <div class="licence-card">
+      <div class="licence-label">Driving</div>
+      <div class="licence-value">Botswana Class B Driver's Licence &middot; 5+ years clean</div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="section-label">References</div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-name">Dr. Kazuyasu Shindo</div>
+        <div class="ref-role">Lecturer in Economic Geology &amp; Mineral Exploration &middot; BIUST</div>
+        <div class="ref-contact">
+          <a href="mailto:kazuyasus@biust.ac.bw">kazuyasus@biust.ac.bw</a>
+          <a href="tel:+26774320011">+267 74 320 011</a>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-name">Dr. Motsamai</div>
+        <div class="ref-role">Lecturer in Petroleum Geology &amp; Geochemistry &middot; BIUST</div>
+        <div class="ref-contact">
+          <a href="mailto:motsamait@biust.ac.bw">motsamait@biust.ac.bw</a>
+          <a href="tel:+26773447399">+267 73 447 399</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
