@@ -14,10 +14,9 @@
       line-height: 1.6;
     }
 
-    /* HEADER WITH BANNER */
+    /* HEADER - REPLACED WITH CLEAR BANNER */
     header {
-      /* Blends a dark overlay with your banner image for high text contrast */
-      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('banner.jpg');
+      background: url('banner.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -27,6 +26,11 @@
       position: relative;
     }
 
+    /* Text shadows ensure text remains crisp and readable over any bright spots in the image */
+    header h1, header .subtitle, .contact-row a {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
+    }
+
     .avatar {
       width: 100px;
       height: 100px;
@@ -34,18 +38,18 @@
       border: 4px solid #d35400;
       background-color: #d35400;
       margin: 0 auto 16px;
-      overflow: hidden; /* Keeps the image inside the circle */
+      overflow: hidden; 
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      z-index: 2; /* Sits securely on top of the background */
+      z-index: 2;
     }
 
     .avatar img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Prevents stretching or squishing */
+      object-fit: cover;
     }
 
     header h1 {
@@ -59,7 +63,7 @@
 
     header .subtitle {
       font-size: 14px;
-      opacity: 0.9;
+      opacity: 1;
       margin-bottom: 16px;
       position: relative;
       z-index: 2;
@@ -81,12 +85,10 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      opacity: 0.95;
     }
 
     .contact-row a:hover {
       text-decoration: underline;
-      opacity: 1;
     }
 
     /* BODY */
