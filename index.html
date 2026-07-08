@@ -14,12 +14,17 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    /* HEADER WITH BANNER */
     header {
-      background-color: #2c3e50;
+      /* Blends a dark overlay with your banner image for high text contrast */
+      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #ecf0f1;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
+      position: relative;
     }
 
     .avatar {
@@ -33,6 +38,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      z-index: 2; /* Sits securely on top of the background */
     }
 
     .avatar img {
@@ -46,12 +53,16 @@
       font-weight: 600;
       margin-bottom: 4px;
       color: #ecf0f1;
+      position: relative;
+      z-index: 2;
     }
 
     header .subtitle {
       font-size: 14px;
-      opacity: 0.75;
+      opacity: 0.9;
       margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-row {
@@ -59,6 +70,8 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 16px;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-row a {
@@ -68,7 +81,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .contact-row a:hover {
@@ -274,13 +287,11 @@
 
   <div class="container">
 
-    <!-- PROFILE -->
     <div class="section-label">Profile</div>
     <div class="profile-card">
       Highly motivated BSc Geology graduate from BIUST with a strong technical foundation spanning mineral exploration, hydrogeology, and geotechnical engineering. Proven hands-on experience in geological field mapping, core logging, geochemical soil sampling, and geophysical data interpretation. Holds a clean Class B driver's licence and is ready to deliver immediate value in field-based, data-driven, or consultancy roles across Botswana's geological, water, and engineering sectors.
     </div>
 
-    <!-- SOFTWARE -->
     <div class="section-label">Software</div>
     <div class="software-row">
       <span class="pill">Oasis Montaj</span>
@@ -292,7 +303,6 @@
       <span class="pill">MS Office Suite</span>
     </div>
 
-    <!-- EXPERIENCE -->
     <div class="section-label">Experience</div>
     <div class="exp-card">
       <div class="exp-title">Engineering Geology Intern</div>
@@ -300,7 +310,6 @@
       <div class="exp-desc">Applied geological principles to civil engineering site assessments under professional supervision. Executed field inspections, conducted systematic soil sampling, and compiled detailed geotechnical reports for infrastructure design. Managed on-site safety protocols and coordinated data collection with civil engineering project teams.</div>
     </div>
 
-    <!-- FIELD & ROCK SCIENCE -->
     <div class="section-label">Field &amp; Rock Science</div>
 
     <div class="module-card">
@@ -375,7 +384,6 @@
       <span class="module-code">(GEOL 305)</span>
     </div>
 
-    <!-- RESOURCES & EXPLORATION -->
     <div class="section-label">Resources &amp; Exploration</div>
 
     <div class="module-card">
@@ -434,7 +442,6 @@
       <span class="module-code">(GEOL 404)</span>
     </div>
 
-    <!-- ENVIRONMENT & APPLIED SCIENCE -->
     <div class="section-label">Environment &amp; Applied Science</div>
 
     <div class="module-card">
@@ -493,14 +500,12 @@
       <span class="module-code">(ENVS 402)</span>
     </div>
 
-    <!-- LICENCES -->
     <div class="section-label">Licences</div>
     <div class="licence-card">
       <div class="licence-label">Driving</div>
       <div class="licence-value">Botswana Class B Driver's Licence &middot; 5+ years clean</div>
     </div>
 
-    <!-- REFERENCES -->
     <div class="section-label">References</div>
     <div class="ref-grid">
       <div class="ref-card">
